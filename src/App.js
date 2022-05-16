@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion'
+import images from './images';
+
 
 function App() {
+  const [width, setWidth] = useState(0);
+  const main = useRef();
+
+  useEffect(() => {
+    setWidth(main.current.scrollWidth - main.current.offsetWidth);
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <motion.div ref={main} className='main'>     
+      <div className="header">
+        <h1>IMAGE SLIDER</h1>
+        </div> 
+      <motion.div drag="x"
+       dragConstraints = {{right : 0, left : -width}}
+       className="inner-main">
+        {
+          (images.map(image =>{
+            return(
+              <motion.div className='item'> 
+                <img src = {image} />
+              </motion.div>
+            )
+          }) )
+        }
+      </motion.div>      
+     </motion.div>
   );
 }
 
-export default App;
+export default App
