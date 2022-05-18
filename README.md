@@ -6,6 +6,6 @@ main div has overflow as hidden in order to use sliding image functionality
 
 some important stuff to know -
 
-sliding can be unlimited so inorder to fix the range of sliding we have used dragConstraints{{right : 0, left : -width}} for right, its obvious there will not be any image on right side so its 0
-for left side, we took totsl scrollWidth - offsetWidth that will calculate total range of image on a slider
+sliding can be ranged unlimited so inorder to fix the range of sliding we have used dragConstraints{{right : 0, left : -width}} for right, its obvious there will not be any image on right side so its 0
+for left side, we took total scrollWidth - offsetWidth that will calculate total range of all images on a slider
 and thats the pretty is.
