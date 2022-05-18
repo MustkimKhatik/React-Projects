@@ -1,4 +1,4 @@
-this project is normal and basic image slider done by react basics using react function such as -{useEffect, useRef, useState}
+Basic image slider based react and basics using react function such as -{useEffect, useRef, useState}
 
 there is use of Framer-motion from react and 3 motion div main div, inner-main div, and items for image
 
